@@ -1,0 +1,19 @@
+{
+  "name": "meeymap-analytics-dashboard",
+  "version": "1.0.0",
+  "description": "Professional Analytics Dashboard for MeeyMap - Marketing & Sales Performance Tracking",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "analytics",
+    "dashboard",
+    "meeymap",
+    "marketing",
+    "sales"
+  ],
+  "author": "MeeyMap Analytics",
+  "license": "MIT"
+}
