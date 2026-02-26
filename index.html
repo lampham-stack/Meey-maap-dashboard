@@ -1,0 +1,955 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meey Ecosystem — KPI Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- =========== SIDEBAR =========== -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <div class="logo-mark">M</div>
+        <div>
+            <h1 class="brand-name">Meey Ecosystem</h1>
+            <p class="brand-sub">KPI Dashboard 2025</p>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-page="executive">
+            <span class="nav-icon">🏆</span>
+            <span class="nav-text">Executive Summary</span>
+        </a>
+        <a href="#" class="nav-item" data-page="funnel">
+            <span class="nav-icon">🎯</span>
+            <span class="nav-text">Marketing Funnel</span>
+        </a>
+        <a href="#" class="nav-item" data-page="sales">
+            <span class="nav-icon">💼</span>
+            <span class="nav-text">Sales Analytics</span>
+        </a>
+
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="time-range-wrap">
+            <label for="timeRange">Kỳ báo cáo</label>
+            <select id="timeRange" class="time-select">
+                <option value="month" selected>Tháng này (T2/2025)</option>
+                <option value="quarter">Quý 1/2025</option>
+                <option value="year">Năm 2025</option>
+            </select>
+        </div>
+        <div class="last-updated">🕐 Cập nhật: T2/2025</div>
+    </div>
+</aside>
+
+<!-- =========== MAIN =========== -->
+<main class="main-content">
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  PAGE 1 — EXECUTIVE SUMMARY              ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="executive-page" class="page-content active">
+    <header class="page-header">
+        <div>
+            <h1>Executive Summary</h1>
+            <p class="page-subtitle">Tổng quan Doanh Thu &amp; Nguồn Tiền — T2/2025</p>
+        </div>
+        <span class="header-badge badge-blue">Revenue &amp; Efficiency</span>
+    </header>
+
+    <!-- 8 KPI Cards -->
+    <section class="section">
+        <div class="metrics-grid">
+            <div class="metric-card primary">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#667eea,#764ba2);">💰</div>
+                <div class="metric-content">
+                    <p class="metric-label">Doanh Thu <span class="label-src">(từ Marketing Source)</span></p>
+                    <h3 class="metric-value">₫4,820M</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+18.5% vs tháng trước</span></div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">vs Target ₫5,500M</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:87.6%;background:linear-gradient(90deg,#667eea,#764ba2);"></div></div>
+                        <div class="progress-pct">87.6%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#f093fb,#f5576c);">💸</div>
+                <div class="metric-content">
+                    <p class="metric-label">Chi Phí Marketing</p>
+                    <h3 class="metric-value">₫831M</h3>
+                    <div class="metric-change negative"><span class="arrow">↑</span><span>+5.2% vs tháng trước</span></div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">vs Budget ₫900M</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:92.3%;background:linear-gradient(90deg,#f093fb,#f5576c);"></div></div>
+                        <div class="progress-pct">92.3% đã dùng</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card highlight">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">🎯</div>
+                <div class="metric-content">
+                    <p class="metric-label">ROAS <span class="label-src">(Revenue / Ad Spend)</span></p>
+                    <h3 class="metric-value">5.8x</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+0.6x vs tháng trước</span></div>
+                    <div class="formula-box">₫4,820M ÷ ₫831M = 5.80x</div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">🧲</div>
+                <div class="metric-content">
+                    <p class="metric-label">Tổng Lead Thu Được</p>
+                    <h3 class="metric-value">14,200</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+11.4% vs tháng trước</span></div>
+                    <div class="formula-box">MQL đã qua Sales: 8,820</div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#00c6ff,#0072ff);">🆔</div>
+                <div class="metric-content">
+                    <p class="metric-label">Meey ID <span class="label-src">(Đăng ký mới)</span></p>
+                    <h3 class="metric-value">18,600</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+12.4% vs tháng trước</span></div>
+                    <div class="formula-box">Tài khoản mới tạo trong tháng</div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">📱</div>
+                <div class="metric-content">
+                    <p class="metric-label">MAU <span class="label-src">(Monthly Active Users)</span></p>
+                    <h3 class="metric-value">127,400</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+9.8% vs tháng trước</span></div>
+                    <div class="formula-box">Active users ≠ Lead</div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#fa709a,#fee140);">🆕</div>
+                <div class="metric-content">
+                    <p class="metric-label">Paid User Mới <span class="label-src">(mua lần đầu)</span></p>
+                    <h3 class="metric-value">1,420</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+15.3% vs tháng trước</span></div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">Đóng góp ₫1,988M</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:41%;background:linear-gradient(90deg,#fa709a,#fee140);"></div></div>
+                        <div class="progress-pct">41% Revenue</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#667eea,#a18cd1);">🔁</div>
+                <div class="metric-content">
+                    <p class="metric-label">Paid User Cũ <span class="label-src">(mua lại)</span></p>
+                    <h3 class="metric-value">727</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+8.1% vs tháng trước</span></div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">Đóng góp ₫2,832M</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:59%;background:linear-gradient(90deg,#667eea,#a18cd1);"></div></div>
+                        <div class="progress-pct">59% Revenue</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#f6d365,#fda085);">⏱️</div>
+                <div class="metric-content">
+                    <p class="metric-label">Avg. Time to Purchase <span class="label-src">(Active → Mua lần đầu)</span></p>
+                    <h3 class="metric-value">18 ngày</h3>
+                    <div class="metric-change positive"><span class="arrow">↓</span><span>-3 ngày vs tháng trước (tốt hơn)</span></div>
+                    <div class="formula-box">Từ khi active → thanh toán lần đầu</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart 1: Monthly Revenue + ROAS -->
+    <section class="section">
+        <div class="charts-row">
+            <div class="chart-card wide">
+                <h3>Doanh Thu &amp; ROAS — 6 Tháng Gần Nhất</h3>
+                <p class="chart-sub">Cột = Doanh Thu (triệu ₫) &nbsp;|&nbsp; Đường = ROAS (trục phải)</p>
+                <canvas id="revenueRoasMonthlyChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart 2 + 3 side by side -->
+    <section class="section">
+        <div class="charts-row">
+            <div class="chart-card">
+                <h3>Đóng Góp: Paid User Mới vs Paid User Cũ</h3>
+                <p class="chart-sub">Revenue theo tháng — Mới = mua lần đầu | Cũ = mua lại</p>
+                <canvas id="userContributionChart" style="max-height:240px;"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Revenue &amp; ROAS Theo Kênh</h3>
+                <p class="chart-sub">Cột = Revenue (triệu ₫) &nbsp;|&nbsp; Chấm + đường = ROAS</p>
+                <canvas id="channelRevenueRoasChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart 4: KPI Fluctuation MoM -->
+    <section class="section">
+        <div class="charts-row">
+            <div class="chart-card wide">
+                <h3>Dao Động KPI Theo Tháng (% MoM)</h3>
+                <p class="chart-sub">% thay đổi so với tháng trước — Avg Time to Purchase: âm = tốt (thời gian rút ngắn)</p>
+                <canvas id="kpiFluctuationChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Row 5: Budget Donut + CAC vs ROAS Scatter -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Phân Tích Hiệu Quả Kênh</h2>
+            <p class="section-sub">Tỷ trọng ngân sách & vị trí hiệu quả từng kênh</p>
+        </div>
+        <div class="charts-row">
+            <div class="chart-card">
+                <h3>🍩 Phân Bổ Budget Theo Kênh</h3>
+                <p class="chart-sub">Tổng ₫831M — T2/2025</p>
+                <canvas id="budgetDonutChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>⚡ CAC vs ROAS — Quadrant</h3>
+                <p class="chart-sub">Góc phải trên = hiệu quả nhất (ROAS cao, CAC thấp)</p>
+                <canvas id="cacRoasScatterChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart Row 6: MAU vs Paid User Growth Area -->
+    <section class="section">
+        <div class="charts-row">
+            <div class="chart-card wide">
+                <h3>📈 MAU vs Paid User Growth — Tốc Độ Tăng Trưởng</h3>
+                <p class="chart-sub">So sánh tốc độ tăng MAU (active) và Paid User (mua tiền) — đường cách nhau rộng = conversion gap lớn</p>
+                <canvas id="mauPaidAreaChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart 8: Meey ID vs MAU vs Paid User — Conversion Funnel -->
+    <section class="section">
+        <div class="charts-row">
+            <div class="chart-card wide">
+                <h3>🆔 Meey ID vs MAU vs Paid User — Phễu Chuyển Đổi 6 Tháng</h3>
+                <p class="chart-sub">Đăng ký mới (Meey ID) → Active (MAU) → Mua hàng (Paid User) — khoảng cách càng hẹp = conversion càng tốt</p>
+                <canvas id="meeyIdConversionChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABLE 1: Monthly KPI Summary -->
+    <section class="section">
+        <div class="section-header">
+            <h2>📋 Tổng Hợp KPI Theo Tháng</h2>
+            <p class="section-sub">Số tuyệt đối từng tháng — có thể dùng để báo cáo trực tiếp</p>
+        </div>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>THÁNG</th>
+                        <th>DOANH THU (M₫)</th>
+                        <th>CHI PHÍ (M₫)</th>
+                        <th>ROAS</th>
+                        <th>LEAD</th>
+                        <th>MEEY ID</th>
+                        <th>MAU</th>
+                        <th>USER MỚI</th>
+                        <th>USER CŨ</th>
+                        <th>AVG. TIME (ngày)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="month-cell">T9/2024</td>
+                        <td>3,200</td><td>620</td>
+                        <td><span class="kpi-tag green">5.16x</span></td>
+                        <td>9,100</td><td>11,200</td><td>98,000</td><td>860</td><td>520</td>
+                        <td class="time-tag warn">26</td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T10/2024</td>
+                        <td>3,650</td><td>680</td>
+                        <td><span class="kpi-tag green">5.37x</span></td>
+                        <td>9,850</td><td>12,300</td><td>104,500</td><td>945</td><td>562</td>
+                        <td class="time-tag warn">24</td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T11/2024</td>
+                        <td>3,900</td><td>710</td>
+                        <td><span class="kpi-tag green">5.49x</span></td>
+                        <td>10,520</td><td>13,500</td><td>109,800</td><td>1,038</td><td>598</td>
+                        <td class="time-tag ok">23</td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T12/2024</td>
+                        <td>4,100</td><td>740</td>
+                        <td><span class="kpi-tag green">5.54x</span></td>
+                        <td>11,200</td><td>14,800</td><td>115,200</td><td>1,135</td><td>629</td>
+                        <td class="time-tag ok">21</td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T1/2025</td>
+                        <td>4,480</td><td>790</td>
+                        <td><span class="kpi-tag green">5.67x</span></td>
+                        <td>12,760</td><td>16,550</td><td>121,000</td><td>1,231</td><td>672</td>
+                        <td class="time-tag ok">21</td>
+                    </tr>
+                    <tr class="row-highlight">
+                        <td class="month-cell">T2/2025 <span class="current-badge">Latest</span></td>
+                        <td><strong>4,820</strong></td><td>831</td>
+                        <td><span class="kpi-tag green"><strong>5.80x</strong></span></td>
+                        <td>14,200</td><td><strong>18,600</strong></td><td>127,400</td><td><strong>1,420</strong></td><td>727</td>
+                        <td class="time-tag best"><strong>18</strong></td>
+                    </tr>
+                    <tr class="row-growth">
+                        <td class="month-cell" style="font-style:italic;color:var(--text-3);">% MoM Change</td>
+                        <td class="td-pos">+7.6%</td><td class="td-neg">+5.2%</td>
+                        <td class="td-pos">+2.3%</td>
+                        <td class="td-pos">+11.4%</td><td class="td-pos">+12.4%</td><td class="td-pos">+9.8%</td>
+                        <td class="td-pos">+15.3%</td><td class="td-pos">+8.1%</td>
+                        <td class="td-pos">-14.3% ↓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- TABLE 2: Channel Performance -->
+    <section class="section">
+        <div class="section-header">
+            <h2>📡 Hiệu Quả Chi Tiết Theo Kênh — T2/2025</h2>
+            <p class="section-sub">Revenue, Cost, ROAS, Lead, User Mới, Conv Rate và CAC theo từng kênh</p>
+        </div>
+        <div class="table-wrap">
+            <table class="data-table data-table-sm">
+                <thead>
+                    <tr>
+                        <th>KÊNH</th>
+                        <th>REVENUE (M₫)</th>
+                        <th>CHI PHÍ (M₫)</th>
+                        <th>ROAS</th>
+                        <th>USER MỚI</th>
+                        <th>CONV RATE</th>
+                        <th>CAC (K₫)</th>
+                        <th>ĐÁNH GIÁ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="channel-dot" style="background:#667eea;"></span><strong>Facebook Ads</strong></td>
+                        <td>1,870</td><td>320</td>
+                        <td><span class="kpi-tag green">6.2x</span></td>
+                        <td>820</td>
+                        <td><span class="kpi-tag green">15.8%</span></td>
+                        <td>390</td>
+                        <td><span class="status-pill green">✅ Star</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="channel-dot" style="background:#764ba2;"></span><strong>Google Ads</strong></td>
+                        <td>1,450</td><td>250</td>
+                        <td><span class="kpi-tag green">5.8x</span></td>
+                        <td>640</td>
+                        <td><span class="kpi-tag green">16.8%</span></td>
+                        <td>391</td>
+                        <td><span class="status-pill green">✅ Star</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="channel-dot" style="background:#00f2fe;"></span><strong>TikTok Ads</strong></td>
+                        <td>790</td><td>165</td>
+                        <td><span class="kpi-tag yellow">4.1x ⚠</span></td>
+                        <td>380</td>
+                        <td><span class="kpi-tag yellow">14.6%</span></td>
+                        <td>434</td>
+                        <td><span class="status-pill yellow">⚡ Watch</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="channel-dot" style="background:#43e97b;"></span><strong>Zalo Ads</strong></td>
+                        <td>430</td><td>90</td>
+                        <td><span class="kpi-tag red">3.9x ✗</span></td>
+                        <td>220</td>
+                        <td><span class="kpi-tag red">12.2%</span></td>
+                        <td>409</td>
+                        <td><span class="status-pill red">🔴 Optimize</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="channel-dot" style="background:#fee140;"></span><strong>Organic / SEO</strong></td>
+                        <td>280</td><td>6</td>
+                        <td><span class="kpi-tag green">8.5x 🏆</span></td>
+                        <td>87</td>
+                        <td><span class="kpi-tag green">10.9%</span></td>
+                        <td>69</td>
+                        <td><span class="status-pill green">✅ Grow</span></td>
+                    </tr>
+                    <tr class="table-footer-row">
+                        <td><strong>TỔNG / TB</strong></td>
+                        <td><strong>4,820</strong></td><td><strong>831</strong></td>
+                        <td><span class="kpi-tag green"><strong>5.8x</strong></span></td>
+                        <td><strong>2,147</strong></td>
+                        <td><strong>15.1%</strong></td>
+                        <td><strong>387</strong></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+
+
+
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  PAGE 2 — MARKETING FUNNEL               ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="funnel-page" class="page-content">
+    <header class="page-header">
+        <div>
+            <h1>Marketing Funnel</h1>
+            <p class="page-subtitle">Impression → Reach → Click → Lead → Meey ID → Paid User → Revenue</p>
+        </div>
+        <span class="header-badge badge-pink">Funnel Analytics</span>
+    </header>
+
+    <!-- Cost KPI Cards -->
+    <section class="section">
+        <div class="section-header">
+            <h2>💸 Chi Phí Theo Giai Đoạn Phễu</h2>
+            <p class="section-sub">T2/2025 — Tổng budget ₫831M</p>
+        </div>
+        <div class="metrics-grid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr));">
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#667eea,#764ba2);">📢</div>
+                <div class="metric-content">
+                    <p class="metric-label">CPM <span class="label-src">(Cost/1000 Imp)</span></p>
+                    <h3 class="metric-value">₫101K</h3>
+                    <div class="metric-change positive"><span class="arrow">↓</span><span>-6.2% vs T1</span></div>
+                    <div class="formula-box">Spend / Impression × 1000</div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">🖱️</div>
+                <div class="metric-content">
+                    <p class="metric-label">CPC <span class="label-src">(Cost per Click)</span></p>
+                    <h3 class="metric-value">₫8.4K</h3>
+                    <div class="metric-change positive"><span class="arrow">↓</span><span>-4.1% vs T1</span></div>
+                    <div class="formula-box">Spend / Clicks</div>
+                </div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">🧲</div>
+                <div class="metric-content">
+                    <p class="metric-label">CPLead <span class="label-src">(Cost per Lead)</span></p>
+                    <h3 class="metric-value">₫58.5K</h3>
+                    <div class="metric-change positive"><span class="arrow">↓</span><span>-9.8% vs T1</span></div>
+                    <div class="formula-box">Spend / Leads</div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#00c6ff,#0072ff);">🆔</div>
+                <div class="metric-content">
+                    <p class="metric-label">CP Meey ID <span class="label-src">(Cost per Meey ID)</span></p>
+                    <h3 class="metric-value">₫162K</h3>
+                    <div class="metric-change positive"><span class="arrow">↓</span><span>-7.3% vs T1</span></div>
+                    <div class="formula-box">Spend / Meey ID từ MKT</div>
+                </div>
+            </div>
+            <div class="metric-card primary">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#fa709a,#fee140);">👤</div>
+                <div class="metric-content">
+                    <p class="metric-label">CPUser <span class="label-src">(CAC from MKT)</span></p>
+                    <h3 class="metric-value">₫387K</h3>
+                    <div class="metric-change positive"><span class="arrow">↓</span><span>-8.2% vs T1</span></div>
+                    <div class="formula-box">Spend / New Paid Users</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Rate Chips -->
+    <section class="section">
+        <div class="funnel-rate-row">
+            <div class="funnel-rate-chip">
+                <span class="chip-label">CTR (Click/Impression)</span>
+                <span class="chip-value">1.20%</span>
+                <span class="chip-change positive">↑ +0.18%</span>
+            </div>
+            <div class="chip-arrow">→</div>
+            <div class="funnel-rate-chip highlight">
+                <span class="chip-label">%Lead (Lead/Click)</span>
+                <span class="chip-value">14.4%</span>
+                <span class="chip-change positive">↑ +1.6%</span>
+            </div>
+            <div class="chip-arrow">→</div>
+            <div class="funnel-rate-chip">
+                <span class="chip-label">%Meey ID (Meey ID/Lead)</span>
+                <span class="chip-value">36.1%</span>
+                <span class="chip-change positive">↑ +2.8%</span>
+            </div>
+            <div class="chip-arrow">→</div>
+            <div class="funnel-rate-chip">
+                <span class="chip-label">%Paid (Paid/Meey ID)</span>
+                <span class="chip-value">41.9%</span>
+                <span class="chip-change positive">↑ +0.21%</span>
+            </div>
+            <div class="chip-arrow">→</div>
+            <div class="funnel-rate-chip primary">
+                <span class="chip-label">ROAS Overall</span>
+                <span class="chip-value">5.80x</span>
+                <span class="chip-change positive">↑ +0.13x</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funnel Visual — fv-row 3-column layout -->
+    <section class="section">
+        <div class="section-header">
+            <h2>🎯 Phễu Marketing — T2/2025</h2>
+            <p class="section-sub">Số lượng tuyệt đối &amp; tỷ lệ chuyển đổi giữa các giai đoạn</p>
+        </div>
+        <div class="funnel-v2">
+            <div class="fv-row">
+                <div class="fv-label"><span class="fv-badge" style="background:linear-gradient(135deg,#667eea,#764ba2);">1</span><div><strong>Impression</strong><small>Tổng lượt hiển thị quảng cáo</small></div></div>
+                <div class="fv-track"><div class="fv-fill" style="width:100%;background:linear-gradient(90deg,#667eea,#764ba2);"></div></div>
+                <div class="fv-stats"><span class="fv-num">8,200,000</span><span class="fv-cost">CPM ₫101K</span></div>
+            </div>
+            <div class="fv-conv">▼ <strong>70.0%</strong> tiếp cận (Reach Rate)</div>
+
+            <div class="fv-row">
+                <div class="fv-label"><span class="fv-badge" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">2</span><div><strong>Reach</strong><small>Người dùng tiếp cận (unique)</small></div></div>
+                <div class="fv-track"><div class="fv-fill" style="width:88%;background:linear-gradient(90deg,#4facfe,#00f2fe);"></div></div>
+                <div class="fv-stats"><span class="fv-num">5,740,000</span><span class="fv-cost">70% of Impression</span></div>
+            </div>
+            <div class="fv-conv">▼ <strong>CTR 1.71%</strong> nhấp vào quảng cáo</div>
+
+            <div class="fv-row">
+                <div class="fv-label"><span class="fv-badge" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">3</span><div><strong>Click</strong><small>Lượt nhấp vào quảng cáo</small></div></div>
+                <div class="fv-track"><div class="fv-fill" style="width:72%;background:linear-gradient(90deg,#a18cd1,#fbc2eb);"></div></div>
+                <div class="fv-stats"><span class="fv-num">98,400</span><span class="fv-cost">CPC ₫8.4K</span></div>
+            </div>
+            <div class="fv-conv">▼ <strong>14.4%</strong> điền form / cài đặt (Lead Rate)</div>
+
+            <div class="fv-row">
+                <div class="fv-label"><span class="fv-badge" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">4</span><div><strong>Install / Lead</strong><small>Đăng ký, điền form, cài app</small></div></div>
+                <div class="fv-track"><div class="fv-fill" style="width:55%;background:linear-gradient(90deg,#43e97b,#38f9d7);"></div></div>
+                <div class="fv-stats"><span class="fv-num">14,200</span><span class="fv-cost">CPLead ₫58.5K</span></div>
+            </div>
+            <div class="fv-conv">▼ <strong>36.1%</strong> đăng ký tài khoản (Meey ID)</div>
+
+            <div class="fv-row">
+                <div class="fv-label"><span class="fv-badge" style="background:linear-gradient(135deg,#00c6ff,#0072ff);">5</span><div><strong>Meey ID</strong><small>Tài khoản đăng ký mới từ MKT</small></div></div>
+                <div class="fv-track"><div class="fv-fill" style="width:38%;background:linear-gradient(90deg,#00c6ff,#0072ff);"></div></div>
+                <div class="fv-stats"><span class="fv-num">5,126</span><span class="fv-cost">CP Meey ID ₫162K</span></div>
+            </div>
+            <div class="fv-conv">▼ <strong>41.9%</strong> chuyển đổi thành Paid User (mua hàng)</div>
+
+            <div class="fv-row">
+                <div class="fv-label"><span class="fv-badge" style="background:linear-gradient(135deg,#fa709a,#fee140);">6</span><div><strong>Paid User</strong><small>Mua hàng lần đầu (từ MKT)</small></div></div>
+                <div class="fv-track"><div class="fv-fill" style="width:24%;background:linear-gradient(90deg,#fa709a,#fee140);"></div></div>
+                <div class="fv-stats"><span class="fv-num">2,147</span><span class="fv-cost">CAC ₫387K</span></div>
+            </div>
+            <div class="fv-conv">▼ <strong>Revenue</strong> từ New Paid Users</div>
+
+            <div class="fv-row fv-row-revenue">
+                <div class="fv-label"><span class="fv-badge" style="background:linear-gradient(135deg,#f6d365,#fda085);">7</span><div><strong>Revenue</strong><small>Doanh thu quy về Marketing</small></div></div>
+                <div class="fv-track"><div class="fv-fill" style="width:14%;background:linear-gradient(90deg,#f6d365,#fda085);"></div></div>
+                <div class="fv-stats"><span class="fv-num fv-num-rev">₫1,988M</span><span class="fv-cost">ROAS 5.8x · 41% tổng Rev</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="section">
+        <div class="section-header">
+            <h2>📊 Hiệu Quả Theo Kênh</h2>
+            <p class="section-sub">So sánh CTR, CPLead và conversion rate từng kênh</p>
+        </div>
+        <div class="charts-row">
+            <div class="chart-card">
+                <h3>CTR &amp; %Lead Theo Kênh</h3>
+                <p class="chart-sub">% Click/Impression &amp; % Lead/Click per channel</p>
+                <canvas id="ctrByChannelChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>CPM / CPC / CPLead Theo Kênh</h3>
+                <p class="chart-sub">Chi phí tại từng bước — đơn vị: nghìn ₫</p>
+                <canvas id="costByChannelChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="charts-row">
+            <div class="chart-card">
+                <h3>% Chuyển Đổi Theo Kênh</h3>
+                <p class="chart-sub">CTR → %Lead → %Meey ID → %Paid per channel</p>
+                <canvas id="convByChannelChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Xu Hướng Chi Phí 6 Tháng</h3>
+                <p class="chart-sub">CPLead, CP Meey ID, CPUser — xu hướng giảm</p>
+                <canvas id="costTrendChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Insights Table -->
+    <section class="section">
+        <div class="section-header">
+            <h2>⭐ Top Insights — Kênh / Content / Campaign Tốt Nhất</h2>
+            <p class="section-sub">Xếp hạng theo CTR × CPLead × ROAS</p>
+        </div>
+        <div class="table-wrap">
+            <table class="data-table data-table-sm">
+                <thead>
+                    <tr><th>RANK</th><th>KÊNH</th><th>CONTENT TYPE</th><th>CAMPAIGN</th><th>CTR</th><th>CPLead</th><th>ROAS</th><th>ĐÁNH GIÁ</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="rank-badge gold">#1</span></td><td>Facebook</td><td>Video 15s</td><td>Meey_FB_Retarget_T2</td><td>2.41%</td><td>₫42K</td><td>7.2x</td><td><span class="status-pill green">🔥 Top</span></td></tr>
+                    <tr><td><span class="rank-badge gold">#2</span></td><td>Organic</td><td>Blog SEO</td><td>SEO_MeeyMap_Review</td><td>3.80%</td><td>₫18K</td><td>9.1x</td><td><span class="status-pill green">🌟 Best ROI</span></td></tr>
+                    <tr><td><span class="rank-badge silver">#3</span></td><td>Google</td><td>Search Ads</td><td>GG_Brand_Search_T2</td><td>1.86%</td><td>₫55K</td><td>6.8x</td><td><span class="status-pill green">✅ Good</span></td></tr>
+                    <tr><td><span class="rank-badge silver">#4</span></td><td>TikTok</td><td>UGC Video</td><td>TT_MeeyMap_UGC</td><td>1.05%</td><td>₫71K</td><td>4.9x</td><td><span class="status-pill yellow">⚡ Optimize</span></td></tr>
+                    <tr><td><span class="rank-badge bronze">#5</span></td><td>Zalo</td><td>Image Post</td><td>Zalo_Promo_T2</td><td>0.72%</td><td>₫98K</td><td>3.1x</td><td><span class="status-pill red">⚠️ Review</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  PAGE 3 — SALES ANALYTICS               ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="sales-page" class="page-content">
+    <header class="page-header">
+        <div>
+            <h1>Sales Analytics</h1>
+            <p class="page-subtitle">Sales Performance — Gói Cơ Bản · Trung Cấp · Cao Cấp</p>
+        </div>
+        <span class="header-badge badge-green">Sales Performance</span>
+    </header>
+
+    <!-- 5 KPI Summary Cards -->
+    <section class="section">
+        <div class="section-header">
+            <h2>💰 Tổng Quan Doanh Số — T2/2025</h2>
+            <p class="section-sub">Tổng hợp gói bán được, doanh thu và hiệu suất tháng này</p>
+        </div>
+        <div class="metrics-grid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr));">
+            <div class="metric-card primary">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#667eea,#764ba2);">📦</div>
+                <div class="metric-content">
+                    <p class="metric-label">Tổng Gói Bán Được</p>
+                    <h3 class="metric-value">2,147</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+11.4% vs T1</span></div>
+                    <div class="formula-box">Cơ Bản + Trung + Cao Cấp</div>
+                </div>
+            </div>
+            <div class="metric-card highlight">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">💵</div>
+                <div class="metric-content">
+                    <p class="metric-label">Doanh Thu Sales</p>
+                    <h3 class="metric-value">₫4,793M</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+17.2% vs T1</span></div>
+                    <div class="progress-wrap">
+                        <div class="progress-label">vs Target ₫5,500M</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:87.1%;background:linear-gradient(90deg,#43e97b,#38f9d7);"></div></div>
+                        <div class="progress-pct">87.1%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#f093fb,#f5576c);">📊</div>
+                <div class="metric-content">
+                    <p class="metric-label">ASP <span class="label-src">(Avg Selling Price)</span></p>
+                    <h3 class="metric-value">₫2.23M</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+5.1% vs T1</span></div>
+                    <div class="formula-box">Doanh Thu ÷ Số Gói</div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#00c6ff,#0072ff);">🛒</div>
+                <div class="metric-content">
+                    <p class="metric-label">AOV <span class="label-src">(Avg Order Value)</span></p>
+                    <h3 class="metric-value">₫2.52M</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+6.3% vs T1</span></div>
+                    <div class="formula-box">Doanh Thu ÷ Số đơn hàng (1,903 đơn)</div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#f6d365,#fda085);">👤</div>
+                <div class="metric-content">
+                    <p class="metric-label">ARPU <span class="label-src">(Avg Rev Per User)</span></p>
+                    <h3 class="metric-value">₫2.79M</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+8.5% vs T1</span></div>
+                    <div class="formula-box">Doanh Thu ÷ Unique Paid Users (1,720)</div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">🔄</div>
+                <div class="metric-content">
+                    <p class="metric-label">Renewal Rate <span class="label-src">(Gia hạn)</span></p>
+                    <h3 class="metric-value">66.8%</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+2.3% vs T1</span></div>
+                    <div class="formula-box">727 Gia hạn / 1,089 Đến hạn</div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#f6d365,#fda085);">🏆</div>
+                <div class="metric-content">
+                    <p class="metric-label">Gói Bán Chạy Nhất</p>
+                    <h3 class="metric-value" style="font-size:1.05rem;">Trung Cấp</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+14.2% MoM</span></div>
+                    <div class="formula-box">34.6% tổng gói · 38.7% Revenue</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Package Tier Cards -->
+    <section class="section">
+        <div class="section-header">
+            <h2>📦 Hiệu Suất Từng Gói Sản Phẩm — T2/2025</h2>
+            <p class="section-sub">Số lượng, doanh thu và tỷ trọng từng gói</p>
+        </div>
+        <div class="metrics-grid" style="grid-template-columns:repeat(3,1fr);">
+            <div class="metric-card" style="border-top:3px solid #4facfe;">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">🔵</div>
+                <div class="metric-content">
+                    <p class="metric-label" style="font-size:1rem;font-weight:700;color:#4facfe;">Gói Cơ Bản</p>
+                    <p class="metric-label" style="margin-top:2px;">₫600K / gói · 3 tháng</p>
+                    <h3 class="metric-value">1,050 gói</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+6.6% vs T1</span></div>
+                    <div class="progress-wrap" style="margin-top:10px;">
+                        <div class="progress-label">Doanh thu: ₫630M (13.1%)</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:48.9%;background:linear-gradient(90deg,#4facfe,#00f2fe);"></div></div>
+                        <div class="progress-pct">48.9% tổng gói</div>
+                    </div>
+                    <div class="formula-box" style="margin-top:8px;">Upsell → Trung Cấp: 18.3%</div>
+                </div>
+            </div>
+            <div class="metric-card highlight" style="border-top:3px solid #a18cd1;">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">🟣</div>
+                <div class="metric-content">
+                    <p class="metric-label" style="font-size:1rem;font-weight:700;color:#a18cd1;">Gói Trung Cấp ⭐ Best</p>
+                    <p class="metric-label" style="margin-top:2px;">₫2,500K / gói · 3 tháng</p>
+                    <h3 class="metric-value">742 gói</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+14.2% vs T1</span></div>
+                    <div class="progress-wrap" style="margin-top:10px;">
+                        <div class="progress-label">Doanh thu: ₫1,855M (38.7%)</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:34.6%;background:linear-gradient(90deg,#a18cd1,#fbc2eb);"></div></div>
+                        <div class="progress-pct">34.6% tổng gói</div>
+                    </div>
+                    <div class="formula-box" style="margin-top:8px;">Upsell → Cao Cấp: 11.7%</div>
+                </div>
+            </div>
+            <div class="metric-card" style="border-top:3px solid #fda085;">
+                <div class="metric-icon" style="background:linear-gradient(135deg,#f6d365,#fda085);">🟡</div>
+                <div class="metric-content">
+                    <p class="metric-label" style="font-size:1rem;font-weight:700;color:#fda085;">Gói Cao Cấp 🚀 Bứt phá</p>
+                    <p class="metric-label" style="margin-top:2px;">₫6,500K / gói · 3 tháng</p>
+                    <h3 class="metric-value">355 gói</h3>
+                    <div class="metric-change positive"><span class="arrow">↑</span><span>+26.8% vs T1</span></div>
+                    <div class="progress-wrap" style="margin-top:10px;">
+                        <div class="progress-label">Doanh thu: ₫2,308M (48.2%)</div>
+                        <div class="progress-track"><div class="progress-fill" style="width:16.5%;background:linear-gradient(90deg,#f6d365,#fda085);"></div></div>
+                        <div class="progress-pct">16.5% tổng gói</div>
+                    </div>
+                    <div class="formula-box" style="margin-top:8px;">Renewal Rate: 82.4%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Row 1 -->
+    <section class="section">
+        <div class="section-header">
+            <h2>📈 Xu Hướng Bán Hàng Theo Thời Gian</h2>
+            <p class="section-sub">Gói nào đang tăng trưởng mạnh nhất — 6 tháng gần nhất</p>
+        </div>
+        <div class="charts-row">
+            <div class="chart-card">
+                <h3>🏅 Số Gói Bán Theo Tháng</h3>
+                <p class="chart-sub">Stacked bar — Cơ Bản / Trung Cấp / Cao Cấp</p>
+                <canvas id="packageSoldMonthlyChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>💰 Doanh Thu Đóng Góp Theo Gói</h3>
+                <p class="chart-sub">Line — Revenue (triệu ₫) từng gói qua 6 tháng</p>
+                <canvas id="packageRevenueMonthlyChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Row 2 -->
+    <section class="section">
+        <div class="charts-row">
+            <div class="chart-card">
+                <h3>🍩 Tỷ Trọng — Số Lượng vs Doanh Thu</h3>
+                <p class="chart-sub">Vòng trong = số gói · Vòng ngoài = revenue</p>
+                <canvas id="packageMixDonutChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>⚡ Tốc Độ Tăng Trưởng MoM (%) Theo Gói</h3>
+                <p class="chart-sub">Gói Cao Cấp đang bứt phá mạnh nhất</p>
+                <canvas id="packageGrowthChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Summary Table -->
+    <section class="section">
+        <div class="section-header">
+            <h2>📋 Tổng Hợp Doanh Số Theo Tháng</h2>
+            <p class="section-sub">Số liệu chi tiết từng gói — T9/2024 → T2/2025</p>
+        </div>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>THÁNG</th>
+                        <th style="color:#4facfe;">CƠ BẢN (gói)</th>
+                        <th style="color:#a18cd1;">TRUNG CẤP (gói)</th>
+                        <th style="color:#fda085;">CAO CẤP (gói)</th>
+                        <th>TỔNG</th>
+                        <th>DOANH THU (M₫)</th>
+                        <th>ASP (K₫)</th>
+                        <th>RENEWAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="month-cell">T9/2024</td>
+                        <td><span style="color:#4facfe;font-weight:600;">840</span></td>
+                        <td><span style="color:#a18cd1;font-weight:600;">542</span></td>
+                        <td><span style="color:#fda085;font-weight:600;">198</span></td>
+                        <td>1,580</td><td>3,146</td><td>1,990</td>
+                        <td><span class="kpi-tag yellow">60.1%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T10/2024</td>
+                        <td><span style="color:#4facfe;font-weight:600;">878</span></td>
+                        <td><span style="color:#a18cd1;font-weight:600;">568</span></td>
+                        <td><span style="color:#fda085;font-weight:600;">212</span></td>
+                        <td>1,658</td><td>3,325</td><td>2,005</td>
+                        <td><span class="kpi-tag yellow">61.8%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T11/2024</td>
+                        <td><span style="color:#4facfe;font-weight:600;">910</span></td>
+                        <td><span style="color:#a18cd1;font-weight:600;">595</span></td>
+                        <td><span style="color:#fda085;font-weight:600;">228</span></td>
+                        <td>1,733</td><td>3,516</td><td>2,029</td>
+                        <td><span class="kpi-tag yellow">62.9%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T12/2024</td>
+                        <td><span style="color:#4facfe;font-weight:600;">948</span></td>
+                        <td><span style="color:#a18cd1;font-weight:600;">624</span></td>
+                        <td><span style="color:#fda085;font-weight:600;">248</span></td>
+                        <td>1,820</td><td>3,741</td><td>2,056</td>
+                        <td><span class="kpi-tag green">63.7%</span></td>
+                    </tr>
+                    <tr>
+                        <td class="month-cell">T1/2025</td>
+                        <td><span style="color:#4facfe;font-weight:600;">985</span></td>
+                        <td><span style="color:#a18cd1;font-weight:600;">672</span></td>
+                        <td><span style="color:#fda085;font-weight:600;">280</span></td>
+                        <td>1,937</td><td>4,091</td><td>2,112</td>
+                        <td><span class="kpi-tag green">64.5%</span></td>
+                    </tr>
+                    <tr class="row-highlight">
+                        <td class="month-cell">T2/2025 <span class="current-badge">Latest</span></td>
+                        <td><strong style="color:#4facfe;">1,050</strong></td>
+                        <td><strong style="color:#a18cd1;">742</strong></td>
+                        <td><strong style="color:#fda085;">355</strong></td>
+                        <td><strong>2,147</strong></td>
+                        <td><strong>4,793</strong></td>
+                        <td><strong>2,232</strong></td>
+                        <td><span class="kpi-tag green"><strong>66.8%</strong></span></td>
+                    </tr>
+                    <tr class="row-growth">
+                        <td class="month-cell" style="font-style:italic;color:var(--text-3);">% MoM</td>
+                        <td class="td-pos">+6.6%</td><td class="td-pos">+10.4%</td><td class="td-pos">+26.8%</td>
+                        <td class="td-pos">+10.8%</td><td class="td-pos">+17.2%</td>
+                        <td class="td-pos">+5.7%</td><td class="td-pos">+2.3%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Upsell Insights -->
+    <section class="section">
+        <div class="section-header">
+            <h2>💡 Insights &amp; Cơ Hội Upsell</h2>
+            <p class="section-sub">Phân tích xu hướng và gợi ý hành động tối ưu doanh thu</p>
+        </div>
+        <div class="charts-row">
+            <div class="chart-card" style="flex:1;">
+                <h3>🔺 Gói Cao Cấp — Tăng trưởng bứt phá +26.8%</h3>
+                <p class="chart-sub">Tín hiệu người dùng chín muồi, sẵn sàng trả thêm cho value cao hơn</p>
+                <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">
+                    <div style="background:rgba(253,160,133,0.1);border:1px solid rgba(253,160,133,0.3);border-radius:10px;padding:14px;">
+                        <p style="color:#fda085;font-weight:600;margin-bottom:4px;">🏆 Upsell Cơ Bản → Trung Cấp</p>
+                        <p style="color:#94a3b8;font-size:0.85rem;">182 khách upgrade T2 · Tỷ lệ 18.3% · Target: User dùng &gt;2 tháng</p>
+                    </div>
+                    <div style="background:rgba(253,160,133,0.1);border:1px solid rgba(253,160,133,0.3);border-radius:10px;padding:14px;">
+                        <p style="color:#fda085;font-weight:600;margin-bottom:4px;">⚡ Upsell Trung → Cao Cấp</p>
+                        <p style="color:#94a3b8;font-size:0.85rem;">87 khách upgrade T2 · Tỷ lệ 11.7% · Trigger: hết quota Trung Cấp</p>
+                    </div>
+                    <div style="background:rgba(67,233,123,0.1);border:1px solid rgba(67,233,123,0.3);border-radius:10px;padding:14px;">
+                        <p style="color:#43e97b;font-weight:600;margin-bottom:4px;">✅ Renewal Rate Cao Cấp = 82.4%</p>
+                        <p style="color:#94a3b8;font-size:0.85rem;">Khách Cao Cấp trung thành nhất · Ưu tiên dedicated account manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-card" style="flex:1;">
+                <h3>📌 Gói Cơ Bản — Khối lượng lớn, Biên thấp</h3>
+                <p class="chart-sub">48.9% số gói nhưng chỉ 13.1% revenue · Cần upsell automation</p>
+                <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;">
+                    <div style="background:rgba(79,172,254,0.1);border:1px solid rgba(79,172,254,0.3);border-radius:10px;padding:14px;">
+                        <p style="color:#4facfe;font-weight:600;margin-bottom:4px;">🎯 Target Upsell Q2/2025</p>
+                        <p style="color:#94a3b8;font-size:0.85rem;">Upsell 25% Cơ Bản → Trung Cấp: +₫492M/tháng · ROI cao vì 0 chi phí acquisition mới</p>
+                    </div>
+                    <div style="background:rgba(79,172,254,0.1);border:1px solid rgba(79,172,254,0.3);border-radius:10px;padding:14px;">
+                        <p style="color:#4facfe;font-weight:600;margin-bottom:4px;">💬 In-app Nudge Strategy</p>
+                        <p style="color:#94a3b8;font-size:0.85rem;">So sánh tính năng sau 30 ngày dùng · A/B test CTA "Nâng cấp ngay"</p>
+                    </div>
+                    <div style="background:rgba(240,147,251,0.1);border:1px solid rgba(240,147,251,0.3);border-radius:10px;padding:14px;">
+                        <p style="color:#f093fb;font-weight:600;margin-bottom:4px;">📈 Dự báo T3/2025</p>
+                        <p style="color:#94a3b8;font-size:0.85rem;">Cao Cấp vượt 400 gói (+12.7%) · Tổng target: 2,400 gói · ₫5,500M</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
